@@ -1,0 +1,33 @@
+<h2>Show battle</h2>
+
+<ul>
+
+  <li>
+    <strong>Attacker:</strong>
+    <%= @battle.attacker_id %>
+  </li>
+
+  <li>
+    <strong>Defender:</strong>
+    <%= @battle.defender_id %>
+  </li>
+
+  <li>
+    <strong>Title:</strong>
+    <%= @battle.title %>
+  </li>
+
+  <li>
+    <strong>Description:</strong>
+    <%= @battle.description %>
+  </li>
+
+  <li>
+    <strong>Victor:</strong>
+    <%= @battle.victor_id %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: battle_path(@conn, :edit, @battle) %>
+<%= link "Back", to: battle_path(@conn, :index) %>

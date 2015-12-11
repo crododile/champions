@@ -1,0 +1,38 @@
+<h2>Show champion</h2>
+
+<ul>
+
+  <li>
+    <strong>Str:</strong>
+    <%= @champion.str %>
+  </li>
+
+  <li>
+    <strong>Agi:</strong>
+    <%= @champion.agi %>
+  </li>
+
+  <li>
+    <strong>Int:</strong>
+    <%= @champion.int %>
+  </li>
+
+  <li>
+    <strong>Cha:</strong>
+    <%= @champion.cha %>
+  </li>
+
+  <li>
+    <strong>Sta:</strong>
+    <%= @champion.sta %>
+  </li>
+
+  <li>
+    <strong>Wis:</strong>
+    <%= @champion.wis %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: champion_path(@conn, :edit, @champion) %>
+<%= link "Back", to: champion_path(@conn, :index) %>

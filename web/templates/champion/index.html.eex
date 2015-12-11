@@ -1,0 +1,36 @@
+<h2>Listing champions</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Str</th>
+      <th>Agi</th>
+      <th>Int</th>
+      <th>Cha</th>
+      <th>Sta</th>
+      <th>Wis</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for champion <- @champions do %>
+    <tr>
+      <td><%= champion.str %></td>
+      <td><%= champion.agi %></td>
+      <td><%= champion.int %></td>
+      <td><%= champion.cha %></td>
+      <td><%= champion.sta %></td>
+      <td><%= champion.wis %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: champion_path(@conn, :show, champion), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: champion_path(@conn, :edit, champion), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: champion_path(@conn, :delete, champion), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New champion", to: champion_path(@conn, :new) %>

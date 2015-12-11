@@ -1,0 +1,6 @@
+<h2>New battle</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: battle_path(@conn, :create) %>
+
+<%= link "Back", to: battle_path(@conn, :index) %>

@@ -1,0 +1,46 @@
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Oops, something went wrong! Please check the errors below:</p>
+      <ul>
+        <%= for {attr, message} <- f.errors do %>
+          <li><%= humanize(attr) %> <%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= label f, :str, "Str", class: "control-label" %>
+    <%= number_input f, :str, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :agi, "Agi", class: "control-label" %>
+    <%= number_input f, :agi, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :int, "Int", class: "control-label" %>
+    <%= number_input f, :int, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :cha, "Cha", class: "control-label" %>
+    <%= number_input f, :cha, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :sta, "Sta", class: "control-label" %>
+    <%= number_input f, :sta, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :wis, "Wis", class: "control-label" %>
+    <%= number_input f, :wis, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= submit "Submit", class: "btn btn-primary" %>
+  </div>
+<% end %>

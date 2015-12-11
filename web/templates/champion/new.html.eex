@@ -1,0 +1,6 @@
+<h2>New champion</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: champion_path(@conn, :create) %>
+
+<%= link "Back", to: champion_path(@conn, :index) %>
