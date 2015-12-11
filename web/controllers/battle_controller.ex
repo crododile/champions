@@ -5,6 +5,7 @@ defmodule Champions.BattleController do
 
   plug :scrub_params, "battle" when action in [:create, :update]
 
+
   def index(conn, _params) do
     battles = Repo.all(Battle)
     render(conn, "index.html", battles: battles)
